@@ -33,12 +33,12 @@ default: &default
 
 development:
   <<: *default
-  database: APPNAME_development
+  database: BLOG_development
 
 test:
   <<: *default
-  database: APPNAME_test
+  database: BLOG_test
 
 production:
   <<: *default
-  database: APPNAME_production
+  database: BLOG_production
