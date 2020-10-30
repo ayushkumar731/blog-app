@@ -27,18 +27,20 @@
 default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: Sochnavmat@731
+  username: ayush
+  password: Root@731@!
   host: localhost
 
 development:
   <<: *default
-  database: BLOG_development
+  database: blog_development
 
 test:
   <<: *default
-  database: BLOG_test
+  database: blog_test
 
 production:
   <<: *default
-  database: BLOG_production
+  database: blog_production
+  username: blog
+  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
