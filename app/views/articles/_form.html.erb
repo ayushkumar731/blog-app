@@ -2,7 +2,7 @@
 <%= form_with model: @article, local: true do |form| %>
  
   <% if @article.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger" role="alert">
       <h2>
         <%= pluralize(@article.errors.count, "error") %> prohibited
         this article from being saved:
@@ -15,18 +15,19 @@
     </div>
   <% end %>
  
-  <p>
+  <div class="form-group">
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+    <%= form.text_field :title ,:class => 'form-control'%>
+  </div>
  
-  <p>
+  <div class="form-group">
     <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+    <%= form.text_area :text ,:class=>"form-control" ,:id=>"exampleFormControlTextarea1" ,:rows=>"3"%>
+  </div>
  
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="form-group">
+    <%= form.submit  :class => 'btn btn-primary'%>
+    
+  </div>
  
 <% end %>
