@@ -1,23 +1,39 @@
 <div class="container-fluid container-bg">
-    <div class="container">
-        <div class="mx-auto">
-            <%= image_tag(@article.image) %>
-        </div>
-        <h1 class="display-1 font-weight-bolder"><%= @article.title %></h1>
-
-      
-        <div class="content text-justify">
-          <%= @article.text %>
+    <div class="container mt-5">
+        <h1 class="display-1 font-weight-bolder mt-5 text-center lh-1"><%= @article.title %></h1>
+        <div class="mx-auto w-75 mt-5">
+            <%= image_tag(@article.image, :class=>"w-100") %>
         </div>
 
-        <%= render partial:"comments/comment",locals: {commentable: @article} %>
+         <div class="row mt-lg-5 justify-content-around">
+                <div class="col-3">
+                    <div class="row mt-1">
+                        <%= @article.author %>
+                    </div>
+                    <div class="row mt-2">
+                        <div >
+                            <%= @article.date %>
+                        </div>
+                        <div class="ml-2">
+                            * <%= @article.readingtime %> read
+                        </div>
+                    </div>
+                </div>
+                 <div class="content text-justify col-7 mb-sm-5 mx-auto font-size">
+                    <%= @article.text %>
+                </div>
+            </div>
 
-        <h2>Add a comment:</h2>
-        <%= render partial:'comments/form' ,locals:{commentable: @article}%>
+        <div class="container mb-5">
+            <%= render partial:"comments/comment",locals: {commentable: @article} %>
 
-        <%= link_to 'Edit', edit_article_path(@article), :class=>"text-decoration-none btn btn-primary"%> 
+            <h2>Add a comment:</h2>
+            <%= render partial:'comments/form' ,locals:{commentable: @article}%>
 
-        <%= link_to 'Back', articles_path,:class=>"text-decoration-none btn btn-primary ml-3" %>
+            <%= link_to 'Edit', edit_article_path(@article), :class=>"text-decoration-none btn btn-primary"%> 
+
+            <%= link_to 'Back', articles_path,:class=>"text-decoration-none btn btn-primary ml-3" %>
+        </div>
 
     </div>
 </div>

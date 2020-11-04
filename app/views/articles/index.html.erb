@@ -1,41 +1,30 @@
-<h1 class="display-4">Listing Articles</h1>
- 
-<%= link_to 'New article', new_article_path ,:class=>"text-decoration-none btn btn-primary ml-5"%>
-
-<div class="container mt-4">
-  <div class="row border-bottom">
-    <div class="col-sm font-weight-bold">
-        Title
+<div class="container mt-5 mb-5">
+    <div>
+        <% @articles.each do |article| %>
+            <div class="row mt-5 justify-content-around align-items-center ">
+                <div class="col-3">
+                    <div class="row mt-1">
+                    <p class="font-weight-bolder h1"> <%= article.title %></p>
+                    </div>
+                    <div class="row mt-3 ml-5">
+                        <%= article.author %>
+                    </div>
+                    <div class="row mt-2 ml-5">
+                        <div >
+                            <%= article.date %>
+                        </div>
+                        <div class="ml-2">
+                            * <%= article.readingtime %> read
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <a href="/articles/<%=article.id%>"><%= image_tag(article.image, :class=>"w-100")%></a>
+                </div>
+            </div>
+        <% end %>
+   </div>
+    <div class="mt-5">
+        <%= link_to 'New article', new_article_path ,:class=>"text-decoration-none btn btn-primary ml-5" %>
     </div>
-    <div class="col-sm font-weight-bold">
-        Text
-    </div>
-    <div class="col-sm">
-    </div>
-    <div class="col-sm">
-    </div>
-    <div class="col-sm">
-    </div>
-  </div>
-   <% @articles.each do |article| %>
-      <div class="row mt-4">
-        <div class="col-sm font-weight-bold">
-            <%= article.title %>
-        </div>
-        <div class="col-sm">
-            <%= article.text %>
-        </div>
-        <div class="col-sm">
-            <%= link_to 'Show', article_path(article), :class=>"text-decoration-none" %>
-        </div>
-        <div class="col-sm">
-            <%= link_to 'Edit', edit_article_path(article), :class=>"text-decoration-none" %>
-        </div>
-        <div class="col-sm">
-            <%= link_to 'Destroy', article_path(article.id),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }, :class=>"text-decoration-none" %>
-        </div>
-      </div>
-   <% end %>
 </div>

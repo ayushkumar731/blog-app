@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   
 resources :articles do
-  resources :comments,module: :articles
+  resources :comments
 end
   # get 'articles/new'
 
