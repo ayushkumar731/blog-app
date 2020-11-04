@@ -1,5 +1,5 @@
 
-<%= form_with model: @article, local: true do |form| %>
+<%= form_with model: @article, :class=>'container', local: true do |form| %>
  
   <% if @article.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">

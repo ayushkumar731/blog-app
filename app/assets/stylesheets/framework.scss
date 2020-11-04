@@ -1,0 +1,22 @@
+@import "variables";
+
+@font-face {
+  font-family: "Lato";
+  src: url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+}
+
+@font-face {
+  font-family: "Merriweather_Sans";
+  src: url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,800&family=Open+Sans:ital@1&display=swap");
+}
+
+.container-bg {
+  background-color: $slate-color;
+}
+
+.content {
+  width: 60%;
+  margin: 5rem auto;
+  font-size: 1.5rem;
+  font-family: Lato;
+}

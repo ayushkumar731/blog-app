@@ -1,24 +1,23 @@
-<div id=show_body>
-    <div id="container">
-        <div class="image-container">
-            <%= image_tag(@article.image)%>
+<div class="container-fluid container-bg">
+    <div class="container">
+        <div class="mx-auto">
+            <%= image_tag(@article.image) %>
         </div>
         <h1 class="display-1 font-weight-bolder"><%= @article.title %></h1>
 
       
-        <div id="content">
+        <div class="content text-justify">
           <%= @article.text %>
         </div>
 
-        <h2>Comments</h2>
-        <%= render @article.comments %>
+        <%= render partial:"comments/comment",locals: {commentable: @article} %>
 
         <h2>Add a comment:</h2>
-        <%= render 'comments/form' %>
+        <%= render partial:'comments/form' ,locals:{commentable: @article}%>
 
-        <%= link_to 'Edit', edit_article_path(@article) %> 
+        <%= link_to 'Edit', edit_article_path(@article), :class=>"text-decoration-none btn btn-primary"%> 
 
-        <%= link_to 'Back', articles_path %>
+        <%= link_to 'Back', articles_path,:class=>"text-decoration-none btn btn-primary ml-3" %>
 
     </div>
 </div>

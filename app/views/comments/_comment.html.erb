@@ -1,16 +1,19 @@
-<div id="comment">
-  <div>
-    <%= link_to 'X',[comment.article, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-  </div>
-  <div >
-    <strong >Commenter:</strong>
-    <%= comment.commenter%>
-  </div>
-  
-  <div>
-    <strong >Comment:</strong>
-    <%= comment.body%>
-  </div>
+<div class="d-flex flex-column bd-highlight mb-3">
+ <h2>Comments</h2>
+  <% commentable.comments.each do |comment| %>
+    <div class="p-2 bd-highlight">
+      <%= link_to 'X',[comment.article, comment],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div class="p-2 bd-highlight">
+      <strong >Commenter:</strong>
+      <%= comment.commenter%>
+    </div>
+    
+    <div class="p-2 bd-highlight">
+      <strong >Comment:</strong>
+      <%= comment.body%>
+    </div>
+  <%end%>
 </div>
