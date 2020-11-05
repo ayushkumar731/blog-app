@@ -9,7 +9,7 @@ before_action :find_commentable, only: :create
 
         # @commentable.comments.build(comment_params)
         @comment.save
-        redirect_to article_path(params[:article_id])
+        redirect_back(fallback_location: root_path)
     end
 
 

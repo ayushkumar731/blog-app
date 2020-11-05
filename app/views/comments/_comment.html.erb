@@ -1,19 +1,29 @@
 <div class="d-flex flex-column bd-highlight mb-2">
  <h2>Comments</h2>
-  <% commentable.comments.each do |comment| %>
-    <div class="p-2 bd-highlight">
-      <%= link_to 'X',[comment.article, comment],
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-    </div>
-    <div class="p-2 bd-highlight">
-      <strong >Commenter:</strong>
-      <%= comment.commenter%>
-    </div>
-    
-    <div class="p-2 bd-highlight">
-      <strong >Comment:</strong>
-      <%= comment.body%>
-    </div>
-  <%end%>
+    <% commentable.comments.each do |comment| %>
+      <div class="container mt-5">
+          <div class="p-2 bd-highlight">
+                <strong >Commenter:</strong>
+                <%= comment.commenter%>
+          </div>
+          <div class="p-2 bd-highlight">
+            <strong >Comment:</strong>
+            <%= comment.body%>
+          </div>
+          <%= form_with(model: [ comment, Comment.new ], :class=>"mt-1 ml-5")  do |form| %>
+            <div class="form-group">
+              <%= form.label :commenter %><br>
+              <%= form.text_field :commenter ,:class=>"form-control"%>
+            </div>
+            <div class="form-group">
+              <%= form.label :body %><br>
+              <%= form.text_area :body ,:class=>"form-control" ,:id=>"exampleFormControlTextarea1" ,:rows=>"3"%>
+            </div>
+            <div class="form-group">
+              <%= form.submit :class => 'btn btn-primary'%>
+            </div>
+          <% end %>
+              <%= render partial:"comments/comment",locals: {commentable:comment},:class=>"ml-5" %>
+        </div>
+      <%end%>
 </div>
