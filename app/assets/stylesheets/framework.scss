@@ -1,15 +1,74 @@
-@import "variables";
-
-// @font-face {
-//   font-family: "Lato";
-//   src: url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-// }
-
-// @font-face {
-//   font-family: "Merriweather_Sans";
-//   src: url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,800&family=Open+Sans:ital@1&display=swap");
-// }
-
 .font-size {
   font-size: 1.5rem;
+}
+
+.font-family {
+  font-family: Hatton;
+}
+
+@font-face {
+  font-family: Hatton;
+  src: url("https://d33wubrfki0l68.cloudfront.net/496b12635e3372706f8ca15be0d241654c06e0c2/56c0c/_nuxt/fonts/hatton-semibold.64e7f4e.eot");
+  src: url("https://d33wubrfki0l68.cloudfront.net/496b12635e3372706f8ca15be0d241654c06e0c2/56c0c/_nuxt/fonts/hatton-semibold.64e7f4e.eot#iefix")
+      format("embedded-opentype"),
+    url("https://d33wubrfki0l68.cloudfront.net/cbc6c51b767bee8dd2b17298a8395097d74deb27/7c175/_nuxt/46727c96817894f78b6462f720b64bf6.svg")
+      format("svg"),
+    url("https://d33wubrfki0l68.cloudfront.net/565e25de73609921d39fc5c0198c6b4ef4ac6ef2/8c21a/_nuxt/fonts/hatton-semibold.779f06c.ttf")
+      format("truetype"),
+    url("https://d33wubrfki0l68.cloudfront.net/2e61317d96fe1a419a3d37d46d8fc3228256422b/46ce1/_nuxt/fonts/hatton-semibold.fdd4da7.woff")
+      format("woff"),
+    url("https://d33wubrfki0l68.cloudfront.net/aa5076d8853fc55718174f3452dbce60d3e1b9fe/721c4/_nuxt/fonts/hatton-semibold.dc892b5.woff2")
+      format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Sohne;
+  src: url("https://d33wubrfki0l68.cloudfront.net/f373c39dd1bf9dff22c89f54ab118f6b498daef5/f0e40/_nuxt/fonts/soehne-web-buch.a36e407.eot");
+  src: url("https://d33wubrfki0l68.cloudfront.net/f373c39dd1bf9dff22c89f54ab118f6b498daef5/f0e40/_nuxt/fonts/soehne-web-buch.a36e407.eot#iefix")
+      format("embedded-opentype"),
+    url("https://d33wubrfki0l68.cloudfront.net/2dbfffaf1b53425b7e5ae93a1c39dfadb6f327d3/42050/_nuxt/fonts/soehne-web-buch.fdd95cb.woff")
+      format("woff"),
+    url("https://d33wubrfki0l68.cloudfront.net/9c3e32184318bb5a28f9dcc905e9c7a12b5a1c57/66ab4/_nuxt/fonts/soehne-web-buch.af1c947.woff2")
+      format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: SohneMono;
+  src: url("https://d33wubrfki0l68.cloudfront.net/ba99326ca4d00481a4f7a7c07e65112cd51d87c4/70b10/_nuxt/fonts/soehne-mono-web-buch.c14dabf.eot");
+  src: url("https://d33wubrfki0l68.cloudfront.net/ba99326ca4d00481a4f7a7c07e65112cd51d87c4/70b10/_nuxt/fonts/soehne-mono-web-buch.c14dabf.eot#iefix")
+      format("embedded-opentype"),
+    url("https://d33wubrfki0l68.cloudfront.net/5b34818dda19b78c6c30e82712d001f61986d00c/4baf2/_nuxt/fonts/soehne-mono-web-buch.2e08d46.woff")
+      format("woff"),
+    url("https://d33wubrfki0l68.cloudfront.net/a52ddd60c0cfd0d041e32040543114f1c386b406/e0df6/_nuxt/fonts/soehne-mono-web-buch.ff5ae10.woff2")
+      format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.mono {
+  font-family: SohneMono, monospace;
+}
+
+.font {
+  font-family: Sohne, sans-serif !important;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.mh-100 {
+  height: 624px !important;
+}
+
+.article {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0.12rem;
 }
