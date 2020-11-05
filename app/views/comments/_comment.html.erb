@@ -1,5 +1,3 @@
-<div class="d-flex flex-column bd-highlight mb-2">
- <h2>Comments</h2>
     <% commentable.comments.each do |comment| %>
       <div class="container mt-5">
           <div class="p-2 bd-highlight">
@@ -22,8 +20,9 @@
             <div class="form-group">
               <%= form.submit :class => 'btn btn-primary'%>
             </div>
-          <% end %>
+            <div class="ml-5">
               <%= render partial:"comments/comment",locals: {commentable:comment},:class=>"ml-5" %>
+            </div>
+          <% end %>
         </div>
       <%end%>
-</div>

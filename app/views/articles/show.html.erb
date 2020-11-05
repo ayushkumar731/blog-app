@@ -25,7 +25,10 @@
             </div>
 
         <div class="container mb-5">
-            <%= render partial:"comments/comment",locals: {commentable: @article} %>
+            <h2>Comments:-</h2>
+            <div class="d-flex flex-column bd-highlight mb-2">
+                <%= render partial:"comments/comment",locals: {commentable: @article} %>
+            </div>
 
             <h2>Add a comment:</h2>
             <%= render partial:'comments/form' ,locals:{commentable: @article}%>
