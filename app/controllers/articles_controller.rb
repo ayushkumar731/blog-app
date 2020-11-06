@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+
     def index
         @articles = Article.all
     end
@@ -8,7 +9,11 @@ class ArticlesController < ApplicationController
     end
 
     def new
-        @article = Article.new
+        if user_signed_in?
+            @article = Article.new
+        else
+            redirect_to user_session_path
+        end
     end
 
     def edit
@@ -24,13 +29,18 @@ class ArticlesController < ApplicationController
     # end
 
     def create
-        @article = Article.new(article_params)
+        if user_signed_in?
+            @article = Article.new(article_params)
     
-        if @article.save
-            redirect_to @article
+            if @article.save
+                redirect_to @article
+            else
+                render 'new'
+            end
         else
-            render 'new'
+            redirect_to user_session_path
         end
+       
     end
 
 

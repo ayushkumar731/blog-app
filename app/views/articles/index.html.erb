@@ -27,7 +27,12 @@
             </div>
         <% end %>
    </div>
+
     <div class="mt-5">
-        <%= link_to 'New article', new_article_path ,:class=>"text-decoration-none btn btn-primary ml-5" %>
+        <% if user_signed_in? %>
+                <%= link_to 'New article', new_article_path ,:class=>"text-decoration-none btn btn-primary ml-5" %>
+        <%else%>
+                <%= link_to 'Login to post', user_session_path ,:class=>"text-decoration-none btn btn-primary ml-5"%>
+        <%end%>
     </div>
 </div>

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-before_action :find_commentable, only: :create
+    before_action :authenticate_user!
+    before_action :find_commentable, only: :create
 
     def create
         # @article = Article.find(params[:article_id])
