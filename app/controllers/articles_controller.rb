@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def index
         @articles = Article.all
+        authorize @articles
     end
     
     def show
@@ -11,6 +13,7 @@ class ArticlesController < ApplicationController
     def new
         if user_signed_in?
             @article = Article.new
+            authorize @article
         else
             redirect_to user_session_path
         end
@@ -31,6 +34,8 @@ class ArticlesController < ApplicationController
     def create
         if user_signed_in?
             @article = Article.new(article_params)
+            @article.user = current_user
+            authorize @article
     
             if @article.save
                 redirect_to @article
@@ -63,6 +68,10 @@ class ArticlesController < ApplicationController
     end
     
     private
+        def set_article
+          @article = Article.find(params[:id])
+          authorize @article
+        end
         def article_params
             params.require(:article).permit(:title, :text, :image, :author, :readingtime, :date)
         end
