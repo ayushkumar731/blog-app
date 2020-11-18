@@ -36,7 +36,7 @@
             <%end%>
 
             
-            <% if user_signed_in? %>
+           <% if user_signed_in? && current_user.admin?%>
                 <%= link_to 'Edit', edit_article_path(@article), :class=>"text-decoration-none btn btn-primary"%>
             <%end%> 
 

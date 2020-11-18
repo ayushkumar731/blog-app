@@ -3,8 +3,12 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
  
+  def new?
+    return true if user.present? && user.admin?
+  end
+  
   def create?
-    user.present?
+    return true if user.present? && user.admin?
   end
 
   def show?
@@ -12,11 +16,11 @@ class ArticlePolicy < ApplicationPolicy
   end
  
   def update?
-    return true if user.present? && user == article.user
+    return true if user.present? && user.admin?
   end
  
   def destroy?
-    return true if user.present? && user == article.user
+    return true if user.present? && user.admin?
   end
  
   private
