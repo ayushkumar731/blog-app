@@ -62,3 +62,5 @@ gem 'uglifier'
 gem 'activeadmin'
 
 gem 'pundit'
+
+gem 'rake'
