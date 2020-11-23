@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   
-  resources :articles,  only: [:create, :new, :index, :edit, :update, :destroy] do
+  resources :articles,  only: [:create, :new, :index, :destroy] do
     resources :comments
   end
   # get 'articles/new'
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   get '/articles/:slug' => 'articles#show'
+  get '/articles/:slug/edit' => 'articles#edit', as: 'edit_article'
+  patch '/articles/:slug' => 'articles#update'
 
   root to: "welcome#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
