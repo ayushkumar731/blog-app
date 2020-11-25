@@ -1,4 +1,4 @@
 <% if content_for?(:page_image) %>
-  <meta content="<%= @page_image %>" property="og:image">
-  <meta content="#{yield :page_image}" property="twitter:image">
+  <meta content="<%= yield :page_image %>" property="og:image">
+  <meta content="<%= yield :page_image %>" property="twitter:image">
 <%end%>
