@@ -1,5 +1,10 @@
 class Article < ApplicationRecord
+  include ActionView::Helpers::AssetTagHelper
   include Sluggable
+  require './lib/image_url'
+  
+  after_create :set_img_url
+
 
   extend FriendlyId
   friendly_id :url_slug, use: :sequentially_slugged
@@ -10,4 +15,10 @@ class Article < ApplicationRecord
   validates :title, 
     presence: true,
     length: { minimum: 5 }
+
+  def set_img_url
+    content = ImageUrl.new(self.title,self.text)
+    self.link = content.image_url_added
+    self.save!
+  end
 end

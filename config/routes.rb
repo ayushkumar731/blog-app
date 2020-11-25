@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   get '/articles/:slug/edit' => 'articles#edit', as: 'edit_article'
   patch '/articles/:slug' => 'articles#update'
 
+  namespace :api do
+    namespace :v1 do
+     resources :articles
+    end
+  end
+
   root to: "welcome#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

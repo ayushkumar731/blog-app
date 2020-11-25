@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
     def index
       @articles = Article.all
-      authorize @articles
+      render json: @articles
     end
     
     def show
@@ -51,6 +51,6 @@ class ArticlesController < ApplicationController
           authorize @article
         end
         def article_params
-            params.require(:article).permit(:title, :text, :image, :author, :readingtime, :date)
+            params.require(:article).permit(:title, :text, :image, :author, :readingtime, :date, :image_url)
         end
 end
