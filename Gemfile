@@ -67,3 +67,4 @@ gem 'rake'
 
 gem "friendly_id", "~> 5.4"
 
+

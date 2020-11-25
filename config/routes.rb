@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   patch '/articles/:slug' => 'articles#update'
 
   namespace :api do
-    namespace :v1 do
+    namespace :v1, defaults: {format: :json} do
      resources :articles
     end
   end
